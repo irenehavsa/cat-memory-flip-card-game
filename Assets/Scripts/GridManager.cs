@@ -6,8 +6,7 @@ public class GridManager : MonoBehaviour
     [SerializeField] GameObject cardPrefab; // card prefabs
     [SerializeField] Transform gridPanel; // the panel
     [SerializeField] Sprite[] cardSprites; // all available card sprites (front image)
-    [SerializeField] int pairCount = 2; // how many pairs to generate, can be different from total distict sprites
-
+    
     private List<GameObject> cards = new List<GameObject>(); // list of all cards created and placed in the grid
 
     private List<Card> flippedCards = new List<Card>(); // Use list (dynamic) for further levels when player have to match more than 2 cards
@@ -15,7 +14,7 @@ public class GridManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        GenerateCards();
+        //GenerateCards();
     }
 
     // Update is called once per frame
@@ -24,7 +23,7 @@ public class GridManager : MonoBehaviour
         
     }
 
-    private void GenerateCards()
+    public void GenerateCards(int pairCount)
     {
         // list of card ids being played
         List<int> ids = new List<int>(); // generate id for each card pair
