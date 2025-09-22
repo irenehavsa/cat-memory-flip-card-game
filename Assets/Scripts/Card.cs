@@ -10,6 +10,14 @@ public class Card : MonoBehaviour
     public GameObject front; // card front side
     public GameObject back; // card back side
 
+    private bool isFaceUp;
+    private GridManager gridManager; // to check match
+
+    public void Start()
+    {
+        gridManager = FindFirstObjectByType<GridManager>();
+    }
+
     // Create the card
     public void SetCard(int imageId, Sprite imageSprite)
     {
@@ -21,7 +29,17 @@ public class Card : MonoBehaviour
     // Flip the card to show either front or back (not front)
     public void Flip(bool showFront)
     {
-        front.SetActive(showFront);
-        back.SetActive(!showFront);
+        isFaceUp = showFront;
+        front.SetActive(isFaceUp);
+        back.SetActive(!isFaceUp);
+    }
+
+    // When the player click, if the card is face down, then flip the card. Otherwise nothing happened. 
+    public void OnClick()
+    {
+        if (!isFaceUp)
+        {
+            gridManager.OnCardClicked(this);
+        }
     }
 }

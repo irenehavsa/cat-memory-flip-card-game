@@ -10,6 +10,8 @@ public class GridManager : MonoBehaviour
 
     private List<GameObject> cards = new List<GameObject>(); // list of all cards created and placed in the grid
 
+    private List<Card> flippedCards = new List<Card>(); // Use list (dynamic) for further levels when player have to match more than 2 cards
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -49,9 +51,42 @@ public class GridManager : MonoBehaviour
             // access the Card script
             Card card = newCard.GetComponent<Card>(); 
             card.SetCard(id, cardSprites[id]);
-            card.Flip(true); // start face down
+            card.Flip(false); // start face down
             
             cards.Add(newCard);
+
+            Debug.Log("Card id: " + id + " created, isFaceDown");
         }
+    }
+
+    public void OnCardClicked(Card clickedCard)
+    {
+        if (flippedCards.Count >= 2) return; // block if 2 are already flipped
+
+        clickedCard.Flip(true);
+        flippedCards.Add(clickedCard);
+
+        if (flippedCards.Count == 2)
+        {
+            StartCoroutine(CheckMatch());
+        }
+    }
+
+    private System.Collections.IEnumerator CheckMatch()
+    {
+        yield return new WaitForSeconds(0.7f); // wait a moment so the player can see both cards
+
+        if (flippedCards[0].id == flippedCards[1].id)
+        {
+            Debug.Log("Match!");
+        }
+        else
+        {
+            Debug.Log("Not Match! Flip back the cards!");
+            flippedCards[0].Flip(false);
+            flippedCards[1].Flip(false);
+        }
+
+        flippedCards.Clear();
     }
 }
