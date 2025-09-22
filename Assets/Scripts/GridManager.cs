@@ -27,6 +27,8 @@ public class GridManager : MonoBehaviour
 
     public void GenerateCards(int pairCount)
     {
+        ClearGrid(); // make sure the grid is cleared before adding new cards
+
         // list of card ids being played
         List<int> ids = new List<int>(); // generate id for each card pair
 
@@ -57,6 +59,14 @@ public class GridManager : MonoBehaviour
             cards.Add(newCard);
 
             Debug.Log("Card id: " + id + " created, isFaceDown");
+        }
+    }
+
+    private void ClearGrid()
+    {
+        foreach (Transform child in gridPanel)
+        {
+            Destroy(child.gameObject);
         }
     }
 

@@ -1,6 +1,6 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,11 +8,16 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI levelText;
     [SerializeField] TextMeshProUGUI remainingStepsText;
+    
     [SerializeField] GameObject winScreen;
     [SerializeField] TextMeshProUGUI winInfoText;
+    [SerializeField] Button continueButton;
+
     [SerializeField] GameObject loseScreen;
 
     [SerializeField] int level = 1;
+    private int maxLevel = 7;
+
     private int pairCount; // how many pairs to generate, can be different from total distict sprites
     public int remainingSteps = 5;
     private int remainingPairs;
@@ -26,6 +31,17 @@ public class GameManager : MonoBehaviour
     {
         gridManager = FindFirstObjectByType<GridManager>();
 
+        StartLevel();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    private void StartLevel()
+    {
         levelText.text = "Level " + level;
         remainingStepsText.text = "Steps " + remainingSteps;
 
@@ -34,12 +50,6 @@ public class GameManager : MonoBehaviour
         remainingPairs = pairCount;
 
         gameActive = true;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void OnCardClicked(bool match)
@@ -80,5 +90,30 @@ public class GameManager : MonoBehaviour
         Debug.Log("masuk Player Lose");
         loseScreen.gameObject.SetActive(true);
         gameActive = false;
+    }
+
+    public void NextLevel()
+    {
+        if (level >= maxLevel)
+        {
+            Debug.Log("Message upcoming levels");
+        } else
+        {
+            winScreen.gameObject.SetActive(false);
+
+            level++;
+            remainingSteps = 10;
+
+            StartLevel();
+        }
+    }
+
+    public void Restart()
+    {
+        loseScreen.gameObject.SetActive(false);
+
+        remainingSteps = 10;
+
+        StartLevel();
     }
 }
