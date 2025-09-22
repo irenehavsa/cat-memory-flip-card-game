@@ -3,6 +3,8 @@ using System.Collections.Generic;
 
 public class GridManager : MonoBehaviour
 {
+    private GameManager gameManager;
+
     [SerializeField] GameObject cardPrefab; // card prefabs
     [SerializeField] Transform gridPanel; // the panel
     [SerializeField] Sprite[] cardSprites; // all available card sprites (front image)
@@ -14,7 +16,7 @@ public class GridManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //GenerateCards();
+        gameManager = FindFirstObjectByType<GameManager>();
     }
 
     // Update is called once per frame
@@ -78,12 +80,14 @@ public class GridManager : MonoBehaviour
         if (flippedCards[0].id == flippedCards[1].id)
         {
             Debug.Log("Match!");
+            gameManager.OnCardClicked(true); // tell the game manager it match
         }
         else
         {
             Debug.Log("Not Match! Flip back the cards!");
             flippedCards[0].Flip(false);
             flippedCards[1].Flip(false);
+            gameManager.OnCardClicked(false); // tell the game manager it does not match
         }
 
         flippedCards.Clear();

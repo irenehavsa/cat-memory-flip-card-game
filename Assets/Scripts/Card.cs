@@ -11,11 +11,14 @@ public class Card : MonoBehaviour
     public GameObject back; // card back side
 
     private bool isFaceUp;
+
     private GridManager gridManager; // to check match
+    private GameManager gameManager;
 
     public void Start()
     {
         gridManager = FindFirstObjectByType<GridManager>();
+        gameManager = FindFirstObjectByType<GameManager>();
     }
 
     // Create the card
@@ -37,7 +40,7 @@ public class Card : MonoBehaviour
     // When the player click, if the card is face down, then flip the card. Otherwise nothing happened. 
     public void OnClick()
     {
-        if (!isFaceUp)
+        if (!isFaceUp && gameManager.gameActive)
         {
             gridManager.OnCardClicked(this);
         }
