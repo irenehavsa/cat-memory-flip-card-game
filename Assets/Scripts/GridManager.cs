@@ -1,12 +1,19 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class GridManager : MonoBehaviour
 {
     private GameManager gameManager;
 
     [SerializeField] GameObject cardPrefab; // card prefabs
+    
     [SerializeField] Transform gridPanel; // the panel
+    [SerializeField] GridLayoutGroup gridLayoutGroup;
+    [SerializeField] RectTransform gridRectTransform;
+
+
     [SerializeField] Sprite[] cardSprites; // all available card sprites (front image)
     
     private List<GameObject> cards = new List<GameObject>(); // list of all cards created and placed in the grid
@@ -25,9 +32,14 @@ public class GridManager : MonoBehaviour
         
     }
 
-    public void GenerateCards(int pairCount)
+    public void GenerateCards(int pairCount, int maxCol)
     {
         ClearGrid(); // make sure the grid is cleared before adding new cards
+
+        gridLayoutGroup.constraint = GridLayoutGroup.Constraint.FixedColumnCount; // Make sure constraint is set
+        gridLayoutGroup.constraintCount = maxCol;
+
+        AdjustCellSize(maxCol);
 
         // list of card ids being played
         List<int> ids = new List<int>(); // generate id for each card pair
@@ -77,6 +89,8 @@ public class GridManager : MonoBehaviour
         clickedCard.Flip(true);
         flippedCards.Add(clickedCard);
 
+        gameManager.ReduceSteps(1);
+
         if (flippedCards.Count == 2)
         {
             StartCoroutine(CheckMatch());
@@ -101,5 +115,18 @@ public class GridManager : MonoBehaviour
         }
 
         flippedCards.Clear();
+    }
+
+    private void AdjustCellSize(int cols)
+    {
+        // Get total width and height of the panel
+        float panelWidth = gridRectTransform.rect.width;
+        float panelHeight = gridRectTransform.rect.height;
+
+        // Substract spacing
+        float spacingX = gridLayoutGroup.spacing.x * (cols - 1);
+        float cellWidth = (panelWidth - spacingX - gridLayoutGroup.padding.left - gridLayoutGroup.padding.right) / cols;
+
+        gridLayoutGroup.cellSize = new Vector2(cellWidth, cellWidth);
     }
 }

@@ -1993,7 +1993,7 @@ MonoBehaviour:
   continueButton: {fileID: 846042516}
   loseScreen: {fileID: 768343708}
   settingsScreen: {fileID: 475520075}
-  level: 1
+  level: 9
   remainingSteps: 10
   gameActive: 0
   loader: {fileID: 64305483}
@@ -4407,60 +4407,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1527692440}
   m_CullTransparentMesh: 1
---- !u!1 &1575072877
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1575072879}
-  - component: {fileID: 1575072878}
-  m_Layer: 0
-  m_Name: GridManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1575072878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1575072877}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd448958b7c10e1408f18d90fa00b969, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GridManager
-  cardPrefab: {fileID: 203420258060221608, guid: fccf11f80a4db9347bfdb751241441ee, type: 3}
-  gridPanel: {fileID: 1756003562}
-  cardSprites:
-  - {fileID: 21300000, guid: d34232f40445a2043a95ea564248bb19, type: 3}
-  - {fileID: 21300000, guid: 39b7d693b8ee7a642b3f5d43431fdd1c, type: 3}
-  - {fileID: 21300000, guid: 75533f97f4f0bb949bf46fd3b69b06b4, type: 3}
-  - {fileID: 21300000, guid: bb968589c9fe9d84092df4044c66c64d, type: 3}
-  - {fileID: 21300000, guid: ae143719212ec694bb594d71ce050545, type: 3}
-  - {fileID: 21300000, guid: e9075b68ef9a94f42ba36cea18eff326, type: 3}
-  - {fileID: 21300000, guid: 329426a480f554b48b04af070f387740, type: 3}
---- !u!4 &1575072879
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1575072877}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 119.4649, y: -162.86218, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1594439770
 GameObject:
   m_ObjectHideFlags: 0
@@ -4863,6 +4809,7 @@ GameObject:
   - component: {fileID: 1756003564}
   - component: {fileID: 1756003563}
   - component: {fileID: 1756003565}
+  - component: {fileID: 1756003566}
   m_Layer: 5
   m_Name: GridPanel
   m_TagString: Untagged
@@ -4947,10 +4894,46 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 200, y: 200}
+  m_CellSize: {x: 150, y: 150}
   m_Spacing: {x: 10, y: 10}
   m_Constraint: 1
   m_ConstraintCount: 4
+--- !u!114 &1756003566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756003561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd448958b7c10e1408f18d90fa00b969, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GridManager
+  cardPrefab: {fileID: 203420258060221608, guid: fccf11f80a4db9347bfdb751241441ee, type: 3}
+  gridPanel: {fileID: 1756003562}
+  gridLayoutGroup: {fileID: 1756003565}
+  gridRectTransform: {fileID: 1756003562}
+  cardSprites:
+  - {fileID: 21300000, guid: d34232f40445a2043a95ea564248bb19, type: 3}
+  - {fileID: 21300000, guid: 39b7d693b8ee7a642b3f5d43431fdd1c, type: 3}
+  - {fileID: 21300000, guid: 75533f97f4f0bb949bf46fd3b69b06b4, type: 3}
+  - {fileID: 21300000, guid: bb968589c9fe9d84092df4044c66c64d, type: 3}
+  - {fileID: 21300000, guid: ae143719212ec694bb594d71ce050545, type: 3}
+  - {fileID: 21300000, guid: e9075b68ef9a94f42ba36cea18eff326, type: 3}
+  - {fileID: 21300000, guid: 329426a480f554b48b04af070f387740, type: 3}
+  - {fileID: 21300000, guid: 3f4b235c96d7e6a4395da62c6c6ea774, type: 3}
+  - {fileID: 21300000, guid: bd3111d3e8c85174bab9cba26aced8ca, type: 3}
+  - {fileID: 21300000, guid: 3333c99f93d1b2f4d8c0c4619f2b7d57, type: 3}
+  - {fileID: 21300000, guid: 08ff90fda6f96c24c9c207507d6c783a, type: 3}
+  - {fileID: 21300000, guid: e5dc191b3002c674182065de9127ea59, type: 3}
+  - {fileID: 21300000, guid: 94fda7ad0aa3ff84baef72780a0f48c8, type: 3}
+  - {fileID: 21300000, guid: 4fad61a9726a7834c96219d66088b8a7, type: 3}
+  - {fileID: 21300000, guid: 850f0ab4843636440858355c3ff6eb3c, type: 3}
+  - {fileID: 21300000, guid: 00066df7a6e808d4c8f64ea171e9a746, type: 3}
+  - {fileID: 21300000, guid: 76e4bca53376cf1449fdb486294eb5e1, type: 3}
+  - {fileID: 21300000, guid: 4b6952919d25b454fb7277935aae183d, type: 3}
+  - {fileID: 21300000, guid: b93fe5e6f714cda42b2c8fdb10bd2b88, type: 3}
 --- !u!1 &1777066598
 GameObject:
   m_ObjectHideFlags: 0
@@ -5428,6 +5411,5 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 254892960}
   - {fileID: 1137297525}
-  - {fileID: 1575072879}
   - {fileID: 448184447}
   - {fileID: 64305484}

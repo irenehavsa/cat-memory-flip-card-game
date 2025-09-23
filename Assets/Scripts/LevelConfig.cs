@@ -4,7 +4,8 @@ public class LevelConfig
     public int level;
     public int numberOfPairs;
     public int availableSteps;
-    public int numberOfColumns;
+    public int row;
+    public int col;
 }
 
 public class LevelConfigList

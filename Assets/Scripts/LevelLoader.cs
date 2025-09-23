@@ -13,7 +13,8 @@ public class LevelLoader : MonoBehaviour
     // Load the levels from a JSON file
     private void LoadLevels()
     {
-        string path = Path.Combine(Application.streamingAssetsPath, "levels.json");
+        Debug.Log("Start load JSON");
+        string path = Path.Combine(Application.streamingAssetsPath, "levelsBeta.json");
         if (File.Exists(path))
         {
             // Read the json file and convert the content into list of levels

@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     //private int maxLevel = 7;
 
     //private int pairCount; // how many pairs to generate, can be different from total distict sprites
-    public int remainingSteps = 5;
+    public int remainingSteps;
     private int remainingPairs;
 
     private int totalCoins = 100;
@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
         remainingSteps = config.availableSteps;
 
         //pairCount = level;
-        gridManager.GenerateCards(config.numberOfPairs);
+        gridManager.GenerateCards(config.numberOfPairs, config.col);
         remainingPairs = config.numberOfPairs;
 
         levelText.text = "Level " + config.level;
@@ -68,8 +68,6 @@ public class GameManager : MonoBehaviour
     public void OnCardClicked(bool match)
     {
         Debug.Log("Masuk OnCardClicked in GameManager");
-        remainingSteps--;
-        remainingStepsText.text = "Steps " + remainingSteps;
 
         if (match)
         {
@@ -90,7 +88,7 @@ public class GameManager : MonoBehaviour
     public void PlayerWin()
     {
         Debug.Log("masuk Player Win");
-        int coins = 10 + remainingSteps * 10;
+        int coins = remainingSteps * 10;
         totalCoins += coins;
 
         winInfoText.text = "Remaining Steps: " + remainingSteps + "\nCoins: " + coins + "\nTotal Coins: " + totalCoins;
@@ -147,5 +145,11 @@ public class GameManager : MonoBehaviour
         //Debug.Log("masuk Player Lose");
         settingsScreen.gameObject.SetActive(false);
         gameActive = true;
+    }
+
+    public void ReduceSteps(int steps)
+    {
+        remainingSteps -= steps;
+        remainingStepsText.text = "Steps " + remainingSteps;
     }
 }
