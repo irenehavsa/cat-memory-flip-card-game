@@ -13,12 +13,13 @@ public class GridManager : MonoBehaviour
     [SerializeField] GridLayoutGroup gridLayoutGroup;
     [SerializeField] RectTransform gridRectTransform;
 
-
     [SerializeField] Sprite[] cardSprites; // all available card sprites (front image)
     
     private List<GameObject> cards = new List<GameObject>(); // list of all cards created and placed in the grid
 
     private List<Card> flippedCards = new List<Card>(); // Use list (dynamic) for further levels when player have to match more than 2 cards
+
+    private float maxCellSize = 200f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -127,6 +128,8 @@ public class GridManager : MonoBehaviour
         float spacingX = gridLayoutGroup.spacing.x * (cols - 1);
         float cellWidth = (panelWidth - spacingX - gridLayoutGroup.padding.left - gridLayoutGroup.padding.right) / cols;
 
-        gridLayoutGroup.cellSize = new Vector2(cellWidth, cellWidth);
+        float cellSize = Mathf.Min(cellWidth, maxCellSize);
+
+        gridLayoutGroup.cellSize = new Vector2(cellSize, cellSize);
     }
 }

@@ -17,11 +17,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject loseScreen;
     [SerializeField] GameObject settingsScreen;
 
-    [SerializeField] int level = 1;
+    private int level = 1;
     //private int maxLevel = 7;
 
     //private int pairCount; // how many pairs to generate, can be different from total distict sprites
-    public int remainingSteps;
+    private int remainingSteps;
     private int remainingPairs;
 
     private int totalCoins = 100;
