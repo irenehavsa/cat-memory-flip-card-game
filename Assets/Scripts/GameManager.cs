@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] int level = 1;
     private int maxLevel = 7;
 
-    private int pairCount; // how many pairs to generate, can be different from total distict sprites
+    //private int pairCount; // how many pairs to generate, can be different from total distict sprites
     public int remainingSteps = 5;
     private int remainingPairs;
 
@@ -26,12 +26,14 @@ public class GameManager : MonoBehaviour
 
     public bool gameActive = false;
 
+    public LevelLoader loader;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         gridManager = FindFirstObjectByType<GridManager>();
 
-        StartLevel();
+        StartLevel(level);
     }
 
     // Update is called once per frame
@@ -40,14 +42,23 @@ public class GameManager : MonoBehaviour
         
     }
 
-    private void StartLevel()
+    private void StartLevel(int gameLevel)
     {
-        levelText.text = "Level " + level;
-        remainingStepsText.text = "Steps " + remainingSteps;
+        int levelIndex = gameLevel - 1;
+        LevelConfig config = loader.GetLevel(levelIndex);
 
-        pairCount = level;
-        gridManager.GenerateCards(pairCount);
-        remainingPairs = pairCount;
+        if (config == null) return;
+
+        Debug.Log($"Starting Level {gameLevel} with {config.numberOfPairs} pairs");
+
+        remainingSteps = config.availableSteps;
+
+        //pairCount = level;
+        gridManager.GenerateCards(config.numberOfPairs);
+        remainingPairs = config.numberOfPairs;
+
+        levelText.text = "Level " + config.level;
+        remainingStepsText.text = "Steps " + remainingSteps;
 
         gameActive = true;
     }
@@ -94,7 +105,7 @@ public class GameManager : MonoBehaviour
 
     public void NextLevel()
     {
-        if (level >= maxLevel)
+        if (level >= loader.levelConfigList.levels.Length)
         {
             Debug.Log("Message upcoming levels");
         } else
@@ -104,7 +115,7 @@ public class GameManager : MonoBehaviour
             level++;
             remainingSteps = 10;
 
-            StartLevel();
+            StartLevel(level);
         }
     }
 
@@ -114,6 +125,6 @@ public class GameManager : MonoBehaviour
 
         remainingSteps = 10;
 
-        StartLevel();
+        StartLevel(level);
     }
 }

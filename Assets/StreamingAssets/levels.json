@@ -1,0 +1,14 @@
+{
+  "levels": [
+    {"level": 1, "numberOfPairs": 1, "availableSteps": 10000, "numberOfColumns": 2},
+    {"level": 2, "numberOfPairs": 2, "availableSteps": 10000, "numberOfColumns": 2},
+    {"level": 3, "numberOfPairs": 2, "availableSteps": 10, "numberOfColumns": 2},
+    {"level": 4, "numberOfPairs": 3, "availableSteps": 10, "numberOfColumns": 2},
+    {"level": 5, "numberOfPairs": 3, "availableSteps": 10, "numberOfColumns": 2},
+    {"level": 6, "numberOfPairs": 3, "availableSteps": 10, "numberOfColumns": 2},
+    {"level": 7, "numberOfPairs": 3, "availableSteps": 10, "numberOfColumns": 2},
+    {"level": 8, "numberOfPairs": 4, "availableSteps": 10, "numberOfColumns": 2},
+    {"level": 9, "numberOfPairs": 4, "availableSteps": 10, "numberOfColumns": 2},
+    {"level": 10, "numberOfPairs": 4, "availableSteps": 10, "numberOfColumns": 2}
+  ]
+}

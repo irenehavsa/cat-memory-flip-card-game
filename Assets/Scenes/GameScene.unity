@@ -119,6 +119,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &64305482
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 64305484}
+  - component: {fileID: 64305483}
+  m_Layer: 0
+  m_Name: LevelLoader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &64305483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64305482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b982f6b238c3854b853d318dd2d439d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelLoader
+--- !u!4 &64305484
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64305482}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 54.09224, y: 286.78494, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &80503839
 GameObject:
   m_ObjectHideFlags: 0
@@ -1252,11 +1296,12 @@ MonoBehaviour:
   remainingStepsText: {fileID: 1055859265}
   winScreen: {fileID: 1389153837}
   winInfoText: {fileID: 726431021}
-  continueButton: {fileID: 0}
+  continueButton: {fileID: 846042516}
   loseScreen: {fileID: 768343708}
   level: 7
   remainingSteps: 20
   gameActive: 0
+  loader: {fileID: 64305483}
 --- !u!4 &448184447
 Transform:
   m_ObjectHideFlags: 0
@@ -4108,3 +4153,4 @@ SceneRoots:
   - {fileID: 1137297525}
   - {fileID: 1575072879}
   - {fileID: 448184447}
+  - {fileID: 64305484}
