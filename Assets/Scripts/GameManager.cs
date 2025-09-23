@@ -17,14 +17,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject loseScreen;
     [SerializeField] GameObject settingsScreen;
 
-    private int level = 1;
+    //private int level = 1;
     //private int maxLevel = 7;
 
     //private int pairCount; // how many pairs to generate, can be different from total distict sprites
     private int remainingSteps;
     private int remainingPairs;
 
-    private int totalCoins = 100;
+    //private int totalCoins = 0;
 
     public bool gameActive = false;
 
@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
     {
         gridManager = FindFirstObjectByType<GridManager>();
 
-        StartLevel(level);
+        StartLevel();
     }
 
     // Update is called once per frame
@@ -44,14 +44,19 @@ public class GameManager : MonoBehaviour
         
     }
 
-    private void StartLevel(int gameLevel)
+    private void StartLevel()
     {
-        int levelIndex = gameLevel - 1;
+        if (MainManager.instance.currentLevel >= loader.levelConfigList.levels.Length)
+        {
+            Debug.Log("Message upcoming levels");
+        }
+
+        int levelIndex = MainManager.instance.currentLevel - 1;
         LevelConfig config = loader.GetLevel(levelIndex);
 
         if (config == null) return;
 
-        Debug.Log($"Starting Level {gameLevel} with {config.numberOfPairs} pairs");
+        //Debug.Log($"Starting Level {gameLevel} with {config.numberOfPairs} pairs");
 
         remainingSteps = config.availableSteps;
 
@@ -88,13 +93,16 @@ public class GameManager : MonoBehaviour
     public void PlayerWin()
     {
         Debug.Log("masuk Player Win");
-        int coins = remainingSteps * 10;
-        totalCoins += coins;
+        int coinGained = remainingSteps * 10;
+        MainManager.instance.coins += coinGained;
 
-        winInfoText.text = "Remaining Steps: " + remainingSteps + "\nCoins: " + coins + "\nTotal Coins: " + totalCoins;
+        winInfoText.text = "Remaining Steps: " + remainingSteps + "\nCoins: " + coinGained + "\nTotal Coins: " + MainManager.instance.coins;
 
         winScreen.gameObject.SetActive(true);
         gameActive = false;
+
+        MainManager.instance.currentLevel++;
+        MainManager.instance.SaveData();
     }
     public void PlayerLose()
     {
@@ -105,18 +113,8 @@ public class GameManager : MonoBehaviour
 
     public void NextLevel()
     {
-        if (level >= loader.levelConfigList.levels.Length)
-        {
-            Debug.Log("Message upcoming levels");
-        } else
-        {
-            winScreen.gameObject.SetActive(false);
-
-            level++;
-            remainingSteps = 10;
-
-            StartLevel(level);
-        }
+        winScreen.gameObject.SetActive(false);
+        StartLevel();
     }
 
     public void Restart()
@@ -126,7 +124,7 @@ public class GameManager : MonoBehaviour
 
         remainingSteps = 10;
 
-        StartLevel(level);
+        StartLevel();
     }
 
     public void OpenHomeScreen()
