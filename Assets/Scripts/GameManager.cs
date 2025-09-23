@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,9 +15,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] Button continueButton;
 
     [SerializeField] GameObject loseScreen;
+    [SerializeField] GameObject settingsScreen;
 
     [SerializeField] int level = 1;
-    private int maxLevel = 7;
+    //private int maxLevel = 7;
 
     //private int pairCount; // how many pairs to generate, can be different from total distict sprites
     public int remainingSteps = 5;
@@ -122,9 +124,28 @@ public class GameManager : MonoBehaviour
     public void Restart()
     {
         loseScreen.gameObject.SetActive(false);
+        settingsScreen.gameObject.SetActive(false);
 
         remainingSteps = 10;
 
         StartLevel(level);
+    }
+
+    public void OpenHomeScreen()
+    {
+        SceneManager.LoadScene("HomeScene");
+    }
+
+    public void OpenSettings()
+    {
+        //Debug.Log("masuk Player Lose");
+        settingsScreen.gameObject.SetActive(true);
+        gameActive = false;
+    }
+    public void CloseSettings()
+    {
+        //Debug.Log("masuk Player Lose");
+        settingsScreen.gameObject.SetActive(false);
+        gameActive = true;
     }
 }
