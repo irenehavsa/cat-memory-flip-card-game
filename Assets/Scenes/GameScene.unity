@@ -4459,11 +4459,11 @@ MonoBehaviour:
   gridLayoutGroup: {fileID: 1756003565}
   gridRectTransform: {fileID: 1756003562}
   cardSprites:
-  - {fileID: 21300000, guid: d34232f40445a2043a95ea564248bb19, type: 3}
-  - {fileID: 21300000, guid: 39b7d693b8ee7a642b3f5d43431fdd1c, type: 3}
-  - {fileID: 21300000, guid: 75533f97f4f0bb949bf46fd3b69b06b4, type: 3}
-  - {fileID: 21300000, guid: bb968589c9fe9d84092df4044c66c64d, type: 3}
-  - {fileID: 21300000, guid: ae143719212ec694bb594d71ce050545, type: 3}
+  - {fileID: -5245671843853084250, guid: b7cb7be9367dcdc4e95103d5ee1abe52, type: 3}
+  - {fileID: -8638253055315937588, guid: 5cfe85496e176824ca97c22c7b29f97e, type: 3}
+  - {fileID: -5841167583159609785, guid: 730ffae87e52d1843b857aec5f500edc, type: 3}
+  - {fileID: -564597999343388210, guid: f1513a9402eba304a8ce3317a0bc498c, type: 3}
+  - {fileID: -157432224943651211, guid: a9d90d8e0fc272e4c929dd4afbedb8db, type: 3}
   - {fileID: 21300000, guid: e9075b68ef9a94f42ba36cea18eff326, type: 3}
   - {fileID: 21300000, guid: 329426a480f554b48b04af070f387740, type: 3}
   - {fileID: 21300000, guid: 3f4b235c96d7e6a4395da62c6c6ea774, type: 3}
@@ -4532,14 +4532,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.73546946, b: 0.41037738, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1410478326056653602, guid: 4f2334347efbf434b811bf3807cc7807, type: 3}
+  m_Sprite: {fileID: -656286709673462848, guid: 31689e294b1ccce4380992b5f503e088, type: 3}
   m_Type: 2
   m_PreserveAspect: 0
   m_FillCenter: 1

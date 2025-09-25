@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: 80615bc1281fee249843b899c5f806b4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6869922623061646272
+    second: brand_logo_0
+  - first:
+      213: 8804717496492607193
+    second: brand_logo_1
+  - first:
+      213: 5111482320521183606
+    second: brand_logo_2
+  - first:
+      213: -1754121489501981665
+    second: brand_logo_3
+  - first:
+      213: -8867332496031116374
+    second: brand_logo_4
+  - first:
+      213: -7827971585675779146
+    second: brand_logo_5
+  - first:
+      213: 2559794568963236971
+    second: brand_logo_6
+  - first:
+      213: -8544647102758869954
+    second: brand_logo_7
+  - first:
+      213: -6137396062283360565
+    second: brand_logo_8
+  - first:
+      213: 7603056797406802780
+    second: brand_logo_9
+  - first:
+      213: 8712486021299831771
+    second: brand_logo_10
+  - first:
+      213: 32606961622441570
+    second: brand_logo_11
+  - first:
+      213: 1229550767605570590
+    second: brand_logo_12
+  - first:
+      213: -4225879508885458984
+    second: brand_logo_13
+  - first:
+      213: -2623567678236698742
+    second: brand_logo_14
+  - first:
+      213: 7268423830071970896
+    second: brand_logo_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: brand_logo_0
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 1181
+        width: 930
+        height: 1140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cb520e2a3ed65f50800000000000000
+      internalID: 6869922623061646272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brand_logo_1
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 2142
+        width: 106
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d6cb16e9e3a03a70800000000000000
+      internalID: 8804717496492607193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brand_logo_2
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 2141
+        width: 130
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 671ca56b612afe640800000000000000
+      internalID: 5111482320521183606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brand_logo_3
+      rect:
+        serializedVersion: 2
+        x: 3856
+        y: 1181
+        width: 930
+        height: 1140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f14fa5d8ccb18a7e0800000000000000
+      internalID: -1754121489501981665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brand_logo_4
+      rect:
+        serializedVersion: 2
+        x: 1197
+        y: 1886
+        width: 151
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa399c47318e0f480800000000000000
+      internalID: -8867332496031116374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brand_logo_5
+      rect:
+        serializedVersion: 2
+        x: 1427
+        y: 1188
+        width: 434
+        height: 805
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b3a1f331557d5390800000000000000
+      internalID: -7827971585675779146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brand_logo_6
+      rect:
+        serializedVersion: 2
+        x: 5558
+        y: 1188
+        width: 434
+        height: 805
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b64270d1997368320800000000000000
+      internalID: 2559794568963236971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brand_logo_7
+      rect:
+        serializedVersion: 2
+        x: 1210
+        y: 1184
+        width: 124
+        height: 631
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e34acf44bb05b6980800000000000000
+      internalID: -8544647102758869954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brand_logo_8
+      rect:
+        serializedVersion: 2
+        x: 1956
+        y: 1183
+        width: 368
+        height: 635
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc618b57cc693daa0800000000000000
+      internalID: -6137396062283360565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brand_logo_9
+      rect:
+        serializedVersion: 2
+        x: 2395
+        y: 1176
+        width: 532
+        height: 634
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c533d80efdb738960800000000000000
+      internalID: 7603056797406802780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brand_logo_10
+      rect:
+        serializedVersion: 2
+        x: 3012
+        y: 1168
+        width: 495
+        height: 651
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd3022a20e7f8e870800000000000000
+      internalID: 8712486021299831771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brand_logo_11
+      rect:
+        serializedVersion: 2
+        x: 4882
+        y: 1178
+        width: 591
+        height: 634
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26ed5bcdbd7d37000800000000000000
+      internalID: 32606961622441570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brand_logo_12
+      rect:
+        serializedVersion: 2
+        x: 5109
+        y: 859
+        width: 147
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1c5070a8ed301110800000000000000
+      internalID: 1229550767605570590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brand_logo_13
+      rect:
+        serializedVersion: 2
+        x: 5270
+        y: 923
+        width: 144
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dfa741f9f8aa55c0800000000000000
+      internalID: -4225879508885458984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brand_logo_14
+      rect:
+        serializedVersion: 2
+        x: 5444
+        y: 925
+        width: 224
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a87518ec817379bd0800000000000000
+      internalID: -2623567678236698742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brand_logo_15
+      rect:
+        serializedVersion: 2
+        x: 5689
+        y: 924
+        width: 139
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05c8c64b6f0aed460800000000000000
+      internalID: 7268423830071970896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      brand_logo_0: 6869922623061646272
+      brand_logo_1: 8804717496492607193
+      brand_logo_10: 8712486021299831771
+      brand_logo_11: 32606961622441570
+      brand_logo_12: 1229550767605570590
+      brand_logo_13: -4225879508885458984
+      brand_logo_14: -2623567678236698742
+      brand_logo_15: 7268423830071970896
+      brand_logo_2: 5111482320521183606
+      brand_logo_3: -1754121489501981665
+      brand_logo_4: -8867332496031116374
+      brand_logo_5: -7827971585675779146
+      brand_logo_6: 2559794568963236971
+      brand_logo_7: -8544647102758869954
+      brand_logo_8: -6137396062283360565
+      brand_logo_9: 7603056797406802780
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

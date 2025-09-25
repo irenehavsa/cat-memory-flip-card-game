@@ -5,8 +5,11 @@ using System.Collections;
 
 public class LoadingManager : MonoBehaviour
 {
-    public Slider loadingBar;   // Assign in Inspector
-    public string sceneToLoad;  // Set the next scene’s name in Inspector
+    public Image loadingFill;       // Assign ProgressBarFill in Inspector
+    public string sceneToLoad = "HomeScene";      // Set next scene in Inspector
+    public float minDisplayTime = 1.5f;
+
+    private float currentProgress = 0f;
 
     void Start()
     {
@@ -22,18 +25,18 @@ public class LoadingManager : MonoBehaviour
 
         while (!operation.isDone)
         {
-            // Progress goes from 0 → 0.9 while loading
-            float progress = Mathf.Clamp01(operation.progress / 0.9f);
-            loadingBar.value = progress;
+            float targetProgress = Mathf.Clamp01(operation.progress / 0.9f);
 
-            // Once it’s fully loaded (reaches 0.9), activate the scene
-            if (operation.progress >= 0.9f)
+            // Smooth bar movement
+            currentProgress = Mathf.MoveTowards(currentProgress, targetProgress, Time.deltaTime);
+            loadingFill.fillAmount = currentProgress; // <--- key difference
+
+            if (operation.progress >= 0.9f && currentProgress >= 1f)
             {
-                // Ensure at least 1 second passed
                 float elapsed = Time.time - startTime;
-                if (elapsed < 1f)
+                if (elapsed < minDisplayTime)
                 {
-                    yield return new WaitForSeconds(1f - elapsed);
+                    yield return new WaitForSeconds(minDisplayTime - elapsed);
                 }
 
                 operation.allowSceneActivation = true;

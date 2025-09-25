@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
         remainingPairs = config.numberOfPairs;
 
         levelText.text = "Level " + config.level;
-        remainingStepsText.text = "Steps " + remainingSteps;
+        remainingStepsText.text = "" + remainingSteps;
 
         gameActive = true;
     }
@@ -148,6 +148,6 @@ public class GameManager : MonoBehaviour
     public void ReduceSteps(int steps)
     {
         remainingSteps -= steps;
-        remainingStepsText.text = "Steps " + remainingSteps;
+        remainingStepsText.text = "" + remainingSteps;
     }
 }
