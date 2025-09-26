@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 22cba727077e01541b5908eb768e65cf
+guid: 9bfd180bd6937444c9228288c74c2514
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6892240160048277663
-    second: cat_tree_multiple-removebg-preview_0
+      213: -142007950188160194
+    second: out_of_flips_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cat_tree_multiple-removebg-preview_0
+      name: out_of_flips_0
       rect:
         serializedVersion: 2
-        x: 113
+        x: 0
         y: 0
-        width: 134
-        height: 666
+        width: 1705
+        height: 236
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 16714a15718d950a0800000000000000
-      internalID: -6892240160048277663
+      spriteID: e3bd0cd858c770ef0800000000000000
+      internalID: -142007950188160194
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      cat_tree_multiple-removebg-preview_0: -6892240160048277663
+      out_of_flips_0: -142007950188160194
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

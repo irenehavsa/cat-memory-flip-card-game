@@ -13,10 +13,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI coinsText;
     
     [SerializeField] GameObject winScreen;
-    [SerializeField] TextMeshProUGUI winInfoText;
-    [SerializeField] Button continueButton;
+    [SerializeField] TextMeshProUGUI winCoinsText;
+    [SerializeField] TextMeshProUGUI winRemainingStepsText;
+    [SerializeField] TextMeshProUGUI rewardsText;
+    [SerializeField] Button nextButton;
 
     [SerializeField] GameObject loseScreen;
+    [SerializeField] TextMeshProUGUI loseHeartsText;
+
     [SerializeField] GameObject settingsScreen;
 
     //private int level = 1;
@@ -106,11 +110,13 @@ public class GameManager : MonoBehaviour
 
     public void PlayerWin()
     {
-        Debug.Log("masuk Player Win");
+        //Debug.Log("masuk Player Win");
+        winCoinsText.text = "" + MainManager.instance.coins;
+        winRemainingStepsText.text = "" + remainingSteps;
+
         int coinGained = remainingSteps * 10;
         MainManager.instance.coins += coinGained;
-
-        winInfoText.text = "Remaining Steps: " + remainingSteps + "\nCoins: " + coinGained + "\nTotal Coins: " + MainManager.instance.coins;
+        rewardsText.text = "" + coinGained;
 
         winScreen.gameObject.SetActive(true);
         gameActive = false;

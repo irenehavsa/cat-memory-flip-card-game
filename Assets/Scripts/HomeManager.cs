@@ -49,6 +49,13 @@ public class HomeManager : MonoBehaviour
         nextLevelText3.text = "" + (MainManager.instance.currentLevel + 3);
     }
 
+    private void SetLevelOrbs()
+    {
+        // TO DO
+        // orbs disappears if levels more than max
+        // orbs color based on level type
+    }
+
     public void PlayGame()
     {
         SceneManager.LoadScene("GameScene");
