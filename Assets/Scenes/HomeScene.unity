@@ -149,7 +149,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1394784214}
+  m_Father: {fileID: 1250101180}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -584,6 +584,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7495950841494646578, guid: 1fb75a93688a9fc41a88d93486db6ce6, type: 3}
   m_PrefabInstance: {fileID: 192164762}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &208126647 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1814958427464364055, guid: 1fb75a93688a9fc41a88d93486db6ce6, type: 3}
+  m_PrefabInstance: {fileID: 192164762}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &235216439
 GameObject:
   m_ObjectHideFlags: 0
@@ -1470,6 +1481,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 690392508}
   m_CullTransparentMesh: 1
+--- !u!114 &703950824 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1814958427464364055, guid: 1fb75a93688a9fc41a88d93486db6ce6, type: 3}
+  m_PrefabInstance: {fileID: 5000196429648136024}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &813406473
 GameObject:
   m_ObjectHideFlags: 0
@@ -1613,6 +1635,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MainManager
   currentLevel: 1
   coins: 0
+  hearts: 0
 --- !u!4 &1016784831
 Transform:
   m_ObjectHideFlags: 0
@@ -1930,6 +1953,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adf7309e177c4e54cb6368388338613f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HomeManager
+  heartsText: {fileID: 2067221944}
+  coinsText: {fileID: 433060993}
+  currentLevelText: {fileID: 2104155900}
+  nextLevelText1: {fileID: 703950824}
+  nextLevelText2: {fileID: 208126647}
+  nextLevelText3: {fileID: 2089052172}
 --- !u!4 &1194763720
 Transform:
   m_ObjectHideFlags: 0
@@ -2177,6 +2206,7 @@ RectTransform:
   m_Children:
   - {fileID: 1480035179}
   - {fileID: 2099201949}
+  - {fileID: 36736818}
   - {fileID: 1394784214}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2446,9 +2476,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1707160634}
-  - {fileID: 36736818}
   - {fileID: 1272134287}
+  - {fileID: 1707160634}
   - {fileID: 813406474}
   m_Father: {fileID: 1250101180}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3724,6 +3753,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2080692748}
   m_CullTransparentMesh: 1
+--- !u!114 &2089052172 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1814958427464364055, guid: 1fb75a93688a9fc41a88d93486db6ce6, type: 3}
+  m_PrefabInstance: {fileID: 1782214705}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &2099201948
 GameObject:
   m_ObjectHideFlags: 0
@@ -3799,6 +3839,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2099201948}
   m_CullTransparentMesh: 1
+--- !u!114 &2104155900 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1814958427464364055, guid: 1fb75a93688a9fc41a88d93486db6ce6, type: 3}
+  m_PrefabInstance: {fileID: 3943533467434627278}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &3943533467434627278
 PrefabInstance:
   m_ObjectHideFlags: 0

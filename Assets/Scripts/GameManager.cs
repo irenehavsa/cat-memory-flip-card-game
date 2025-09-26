@@ -1,4 +1,4 @@
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI levelText;
     [SerializeField] TextMeshProUGUI remainingStepsText;
+    [SerializeField] TextMeshProUGUI heartsText;
+    [SerializeField] TextMeshProUGUI coinsText;
     
     [SerializeField] GameObject winScreen;
     [SerializeField] TextMeshProUGUI winInfoText;
@@ -64,8 +66,23 @@ public class GameManager : MonoBehaviour
         gridManager.GenerateCards(config.numberOfPairs, config.col);
         remainingPairs = config.numberOfPairs;
 
-        levelText.text = "Level " + config.level;
+        levelText.text = "Level " + MainManager.instance.coins;
         remainingStepsText.text = "" + remainingSteps;
+
+        // Hearts
+        heartsText.text = "∞"; //temporary
+        /*if (MainManager.instance.hearts < 0)
+        {
+            Debug.Log("Infinity");
+            heartsText.text = "∞";
+        }
+        else
+        {
+            Debug.Log("numbers");
+            heartsText.text = "" + MainManager.instance.hearts;
+        }*/
+
+        coinsText.text = "" + MainManager.instance.coins;
 
         gameActive = true;
     }

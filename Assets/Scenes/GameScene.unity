@@ -1597,6 +1597,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   levelText: {fileID: 674371154}
   remainingStepsText: {fileID: 1055859265}
+  heartsText: {fileID: 1886518010}
+  coinsText: {fileID: 2041870920}
   winScreen: {fileID: 1389153837}
   winInfoText: {fileID: 726431021}
   continueButton: {fileID: 846042516}
@@ -2839,7 +2841,7 @@ RectTransform:
   m_Children:
   - {fileID: 300741490}
   - {fileID: 818820062}
-  m_Father: {fileID: 1837960628}
+  m_Father: {fileID: 988068476}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -3284,6 +3286,8 @@ RectTransform:
   - {fileID: 674371153}
   - {fileID: 788370889}
   - {fileID: 1998078928}
+  - {fileID: 1548534186}
+  - {fileID: 828401619}
   m_Father: {fileID: 1837960628}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
@@ -4315,7 +4319,7 @@ RectTransform:
   m_Children:
   - {fileID: 718129403}
   - {fileID: 1886518009}
-  m_Father: {fileID: 1837960628}
+  m_Father: {fileID: 988068476}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -4734,8 +4738,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 988068476}
-  - {fileID: 1548534186}
-  - {fileID: 828401619}
   - {fileID: 1756003562}
   - {fileID: 1132548418}
   - {fileID: 1278373663}
@@ -5160,7 +5162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9, g: 0.9, b: 0.9, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

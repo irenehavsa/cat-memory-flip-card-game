@@ -8,6 +8,7 @@ public class MainManager : MonoBehaviour
     // Variables yang persistent
     public int currentLevel = 1;
     public int coins = 0;
+    public int hearts = -1;
 
     // Yang akan diprepare sebelum segala yg ada di Start() di berbagai script mulai dijalanin
     private void Awake()
@@ -45,10 +46,10 @@ public class MainManager : MonoBehaviour
         File.WriteAllText(Application.persistentDataPath + "/playerdata.json", json);
     }
 
-    public void LoadData() 
+    public void LoadData()
     {
         string path = Application.persistentDataPath + "/playerdata.json";
-        if (File.Exists(path)) 
+        if (File.Exists(path))
         {
             // Read data from file, load to PlayerData
             string json = File.ReadAllText(path);
