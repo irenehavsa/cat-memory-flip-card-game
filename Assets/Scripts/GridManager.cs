@@ -33,14 +33,14 @@ public class GridManager : MonoBehaviour
         
     }
 
-    public void GenerateCards(int pairCount, int maxCol)
+    public void GenerateCards(int pairCount, int maxCol, int maxRow)
     {
         ClearGrid(); // make sure the grid is cleared before adding new cards
 
         gridLayoutGroup.constraint = GridLayoutGroup.Constraint.FixedColumnCount; // Make sure constraint is set
         gridLayoutGroup.constraintCount = maxCol;
 
-        AdjustCellSize(maxCol);
+        AdjustCellSize(maxCol, maxRow);
 
         // list of card ids being played
         List<int> ids = new List<int>(); // generate id for each card pair
@@ -118,7 +118,7 @@ public class GridManager : MonoBehaviour
         flippedCards.Clear();
     }
 
-    private void AdjustCellSize(int cols)
+    private void AdjustCellSize(int cols, int rows)
     {
         // Get total width and height of the panel
         float panelWidth = gridRectTransform.rect.width;
@@ -128,7 +128,12 @@ public class GridManager : MonoBehaviour
         float spacingX = gridLayoutGroup.spacing.x * (cols - 1);
         float cellWidth = (panelWidth - spacingX - gridLayoutGroup.padding.left - gridLayoutGroup.padding.right) / cols;
 
-        float cellSize = Mathf.Min(cellWidth, maxCellSize);
+        float spacingY = gridLayoutGroup.spacing.y * (rows - 1);
+        float cellHeight = (panelHeight - spacingY - gridLayoutGroup.padding.top - gridLayoutGroup.padding.bottom) / rows;
+
+        //Debug.Log("Cell Width = " + cellWidth);
+
+        float cellSize = Mathf.Min(cellWidth, cellHeight, maxCellSize);
 
         gridLayoutGroup.cellSize = new Vector2(cellSize, cellSize);
     }

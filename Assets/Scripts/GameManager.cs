@@ -58,15 +58,12 @@ public class GameManager : MonoBehaviour
 
         if (config == null) return;
 
-        //Debug.Log($"Starting Level {gameLevel} with {config.numberOfPairs} pairs");
+        remainingSteps = config.steps;
 
-        remainingSteps = config.availableSteps;
+        remainingPairs = config.pairs;
+        gridManager.GenerateCards(config.pairs, config.col, config.row);
 
-        //pairCount = level;
-        gridManager.GenerateCards(config.numberOfPairs, config.col);
-        remainingPairs = config.numberOfPairs;
-
-        levelText.text = "Level " + MainManager.instance.coins;
+        levelText.text = "Level " + MainManager.instance.currentLevel;
         remainingStepsText.text = "" + remainingSteps;
 
         // Hearts

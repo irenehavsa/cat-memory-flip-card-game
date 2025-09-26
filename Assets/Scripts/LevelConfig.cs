@@ -2,8 +2,9 @@
 public class LevelConfig
 {
     public int level;
-    public int numberOfPairs;
-    public int availableSteps;
+    public string type;
+    public int pairs;
+    public int steps;
     public int row;
     public int col;
 }

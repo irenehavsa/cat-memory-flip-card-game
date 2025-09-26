@@ -32,6 +32,7 @@ public class MainManager : MonoBehaviour
     {
         public int currentLevel;
         public int coins;
+        public int hearts;
     }
 
     // Method untuk save data
@@ -40,6 +41,7 @@ public class MainManager : MonoBehaviour
         PlayerData data = new PlayerData();
         data.currentLevel = currentLevel;
         data.coins = coins;
+        data.hearts = hearts;
 
         string json = JsonUtility.ToJson(data);
 
@@ -58,6 +60,7 @@ public class MainManager : MonoBehaviour
             // Isi ke variabel yg bersangkutan
             currentLevel = data.currentLevel;
             coins = data.coins;
+            hearts = data.hearts;
         }
     }
 }
