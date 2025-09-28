@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.IO;
+using System.Collections;
+using UnityEngine.Networking;
 
 public class LevelLoader : MonoBehaviour
 {
@@ -7,24 +9,49 @@ public class LevelLoader : MonoBehaviour
 
     private void Awake()
     {
-        LoadLevels();
+        StartCoroutine(LoadLevels());
     }
 
     // Load the levels from a JSON file
-    private void LoadLevels()
+    private IEnumerator LoadLevels()
     {
         Debug.Log("Start load JSON");
         string path = Path.Combine(Application.streamingAssetsPath, "levelsBeta.json");
-        if (File.Exists(path))
+
+        string jsonContent = null;
+
+        if (path.Contains("://")) // Android / iOS (inside .apk or .obb)
         {
-            // Read the json file and convert the content into list of levels
-            string jsonContent = File.ReadAllText(path);
+            using (UnityWebRequest www = UnityWebRequest.Get(path))
+            {
+                yield return www.SendWebRequest();
+
+                if (www.result == UnityWebRequest.Result.Success)
+                {
+                    jsonContent = www.downloadHandler.text;
+                }
+                else
+                {
+                    Debug.LogError("Failed to load levels file at " + path + " : " + www.error);
+                }
+            }
+        }
+        else // PC / Editor
+        {
+            if (File.Exists(path))
+            {
+                jsonContent = File.ReadAllText(path);
+            }
+            else
+            {
+                Debug.LogError("Levels file not found at " + path);
+            }
+        }
+
+        if (!string.IsNullOrEmpty(jsonContent))
+        {
             levelConfigList = JsonUtility.FromJson<LevelConfigList>(jsonContent);
             Debug.Log("Loaded " + levelConfigList.levels.Length + " levels.");
-        }
-        else
-        {
-            Debug.Log("Levels file not found at " + path);
         }
     }
 
