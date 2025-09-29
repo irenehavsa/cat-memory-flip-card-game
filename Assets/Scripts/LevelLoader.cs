@@ -5,16 +5,33 @@ using UnityEngine.Networking;
 
 public class LevelLoader : MonoBehaviour
 {
-    public LevelConfigList levelConfigList;
+    public static LevelLoader Instance { get; private set; }
+
+    public LevelConfigList levelConfigList { get; private set; }
 
     private void Awake()
     {
-        StartCoroutine(LoadLevels());
+        // --- Singleton setup ---
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject); // survives scene changes
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
     }
 
-    // Load the levels from a JSON file
-    private IEnumerator LoadLevels()
+    // Public coroutine for loading levels
+    public IEnumerator LoadLevels()
     {
+        if (levelConfigList != null) // already loaded
+        {
+            yield break;
+        }
+
         Debug.Log("Start load JSON");
         string path = Path.Combine(Application.streamingAssetsPath, "levelsBeta.json");
 

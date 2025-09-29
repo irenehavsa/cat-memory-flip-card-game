@@ -7,8 +7,6 @@ public class MainManager : MonoBehaviour
 
     // Variables yang persistent
     public int currentLevel = 1;
-    public int coins = 0;
-    public int hearts = -1;
 
     // Yang akan diprepare sebelum segala yg ada di Start() di berbagai script mulai dijalanin
     private void Awake()
@@ -31,8 +29,6 @@ public class MainManager : MonoBehaviour
     class PlayerData
     {
         public int currentLevel;
-        public int coins;
-        public int hearts;
     }
 
     // Method untuk save data
@@ -40,8 +36,6 @@ public class MainManager : MonoBehaviour
     {
         PlayerData data = new PlayerData();
         data.currentLevel = currentLevel;
-        data.coins = coins;
-        data.hearts = hearts;
 
         string json = JsonUtility.ToJson(data);
 
@@ -59,8 +53,6 @@ public class MainManager : MonoBehaviour
 
             // Isi ke variabel yg bersangkutan
             currentLevel = data.currentLevel;
-            coins = data.coins;
-            hearts = data.hearts;
         }
     }
 }

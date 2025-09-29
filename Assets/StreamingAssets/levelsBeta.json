@@ -1,14 +1,19 @@
 {
   "levels": [
-    {"level": 1, "type": "normal", "pairs": 2, "steps": 8, "row": 2, "col": 2},
-    {"level": 2, "type": "normal", "pairs": 3, "steps": 12, "row": 3, "col": 2},
-    {"level": 3, "type": "normal", "pairs": 4, "steps": 20, "row": 4, "col": 2},
-    {"level": 4, "type": "normal", "pairs": 6, "steps": 30, "row": 3, "col": 4},
-    {"level": 5, "type": "normal", "pairs": 8, "steps": 40, "row": 4, "col": 4},
-    {"level": 6, "type": "normal", "pairs": 10, "steps": 50, "row": 5, "col": 4},
-    {"level": 7, "type": "normal", "pairs": 12, "steps": 60, "row": 6, "col": 4},
-    {"level": 8, "type": "normal", "pairs": 14, "steps": 70, "row": 7, "col": 4},
-    {"level": 9, "type": "normal", "pairs": 15, "steps": 76, "row": 6, "col": 5},
-    {"level": 10, "type": "hard", "pairs": 18, "steps": 80, "row": 6, "col": 6}
+    {"level": 1, "type": "normal", "pairs": 1, "steps": 2, "row": 1, "col": 2},
+    {"level": 2, "type": "normal", "pairs": 2, "steps": 8, "row": 2, "col": 2},
+    {"level": 3, "type": "normal", "pairs": 3, "steps": 12, "row": 3, "col": 2},
+    {"level": 4, "type": "normal", "pairs": 4, "steps": 20, "row": 4, "col": 2},
+    {"level": 5, "type": "normal", "pairs": 5, "steps": 26, "row": 3, "col": 4},
+    {"level": 6, "type": "normal", "pairs": 6, "steps": 30, "row": 3, "col": 4},
+    {"level": 7, "type": "normal", "pairs": 6, "steps": 30, "row": 3, "col": 4},
+    {"level": 8, "type": "normal", "pairs": 7, "steps": 36, "row": 4, "col": 4},
+    {"level": 9, "type": "normal", "pairs": 8, "steps": 40, "row": 4, "col": 4},
+    {"level": 10, "type": "normal", "pairs": 8, "steps": 40, "row": 4, "col": 4},
+    {"level": 11, "type": "normal", "pairs": 8, "steps": 40, "row": 4, "col": 4},
+    {"level": 12, "type": "normal", "pairs": 9, "steps": 46, "row": 5, "col": 4},
+    {"level": 13, "type": "normal", "pairs": 10, "steps": 50, "row": 5, "col": 4},
+    {"level": 14, "type": "normal", "pairs": 10, "steps": 50, "row": 5, "col": 4},
+    {"level": 15, "type": "hard", "pairs": 11, "steps": 56, "row": 6, "col": 4}
   ]
 }

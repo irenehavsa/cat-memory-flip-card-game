@@ -1,20 +1,27 @@
 ﻿using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class HomeManager : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI heartsText;
-    [SerializeField] TextMeshProUGUI coinsText;
     [SerializeField] TextMeshProUGUI currentLevelText;
     [SerializeField] TextMeshProUGUI nextLevelText1;
     [SerializeField] TextMeshProUGUI nextLevelText2;
-    [SerializeField] TextMeshProUGUI nextLevelText3;
+    [SerializeField] GameObject nextLevel1;
+    [SerializeField] GameObject nextLevel2;
+
+    [SerializeField] GameObject allCompleted;
+
+    [SerializeField] TextMeshProUGUI playText;
+
+    //public LevelLoader loader;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        UpdateTexts();
+        UpdateLevelList();
+        ShowAllComplete();
     }
 
     // Update is called once per frame
@@ -23,37 +30,31 @@ public class HomeManager : MonoBehaviour
         
     }
 
-    private void UpdateTexts()
+    private void UpdateLevelList()
     {
-        // Hearts
-        Debug.Log("Number of hearts " + MainManager.instance.hearts);
-        heartsText.text = "∞"; //temporary
-        /*if (MainManager.instance.hearts < 0)
+        // Levels
+        currentLevelText.text = "" + Mathf.Min(MainManager.instance.currentLevel, LevelLoader.Instance.levelConfigList.levels.Length);
+
+        if ((MainManager.instance.currentLevel + 1) <= LevelLoader.Instance.levelConfigList.levels.Length)
         {
-            Debug.Log("Infinity");
-            heartsText.text = "∞";
+            nextLevel1.gameObject.SetActive(true);
+            nextLevelText1.text = "" + (MainManager.instance.currentLevel + 1);
         }
-        else
+
+        if ((MainManager.instance.currentLevel + 2) <= LevelLoader.Instance.levelConfigList.levels.Length)
         {
-            Debug.Log("numbers");
-            heartsText.text = "" + MainManager.instance.hearts;
-        }*/
-
-        // Coins
-        coinsText.text = "" + MainManager.instance.coins;
-
-        // Level Orbs
-        currentLevelText.text = "" + MainManager.instance.currentLevel;
-        nextLevelText1.text = "" + (MainManager.instance.currentLevel + 1);
-        nextLevelText2.text = "" + (MainManager.instance.currentLevel + 2);
-        nextLevelText3.text = "" + (MainManager.instance.currentLevel + 3);
+            nextLevel2.gameObject.SetActive(true);
+            nextLevelText2.text = "" + (MainManager.instance.currentLevel + 2);
+        }
     }
 
-    private void SetLevelOrbs()
+    private void ShowAllComplete()
     {
-        // TO DO
-        // orbs disappears if levels more than max
-        // orbs color based on level type
+        if (MainManager.instance.currentLevel > LevelLoader.Instance.levelConfigList.levels.Length)
+        {
+            playText.text = "Play Again";
+            allCompleted.gameObject.SetActive(true);
+        }
     }
 
     public void PlayGame()

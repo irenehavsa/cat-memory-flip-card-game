@@ -9,32 +9,17 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI levelText;
     [SerializeField] TextMeshProUGUI remainingStepsText;
-    [SerializeField] TextMeshProUGUI heartsText;
-    [SerializeField] TextMeshProUGUI coinsText;
     
     [SerializeField] GameObject winScreen;
-    [SerializeField] TextMeshProUGUI winCoinsText;
-    [SerializeField] TextMeshProUGUI winRemainingStepsText;
-    [SerializeField] TextMeshProUGUI rewardsText;
-    [SerializeField] Button nextButton;
-
+    [SerializeField] GameObject allCompletedScreen;
     [SerializeField] GameObject loseScreen;
-    [SerializeField] TextMeshProUGUI loseHeartsText;
 
-    [SerializeField] GameObject settingsScreen;
+    //public LevelLoader loader;
 
-    //private int level = 1;
-    //private int maxLevel = 7;
-
-    //private int pairCount; // how many pairs to generate, can be different from total distict sprites
     private int remainingSteps;
     private int remainingPairs;
-
-    //private int totalCoins = 0;
-
     public bool gameActive = false;
 
-    public LevelLoader loader;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -52,51 +37,37 @@ public class GameManager : MonoBehaviour
 
     private void StartLevel()
     {
-        if (MainManager.instance.currentLevel >= loader.levelConfigList.levels.Length)
+        Debug.Log("MainManager current level: " + MainManager.instance.currentLevel + "\nLevels length: " + LevelLoader.Instance.levelConfigList.levels.Length);
+        if (MainManager.instance.currentLevel >= LevelLoader.Instance.levelConfigList.levels.Length)
         {
             Debug.Log("Message upcoming levels");
         }
 
-        int levelIndex = MainManager.instance.currentLevel - 1;
-        LevelConfig config = loader.GetLevel(levelIndex);
+        //TO DO Fix logic
+        int realLevel = Mathf.Min(MainManager.instance.currentLevel, LevelLoader.Instance.levelConfigList.levels.Length);
+
+        int levelIndex = realLevel - 1;
+        LevelConfig config = LevelLoader.Instance.GetLevel(levelIndex);
 
         if (config == null) return;
 
         remainingSteps = config.steps;
-
+            
         remainingPairs = config.pairs;
         gridManager.GenerateCards(config.pairs, config.col, config.row);
 
-        levelText.text = "Level " + MainManager.instance.currentLevel;
+        levelText.text = "Level " + realLevel;
         remainingStepsText.text = "" + remainingSteps;
-
-        // Hearts
-        heartsText.text = "∞"; //temporary
-        /*if (MainManager.instance.hearts < 0)
-        {
-            Debug.Log("Infinity");
-            heartsText.text = "∞";
-        }
-        else
-        {
-            Debug.Log("numbers");
-            heartsText.text = "" + MainManager.instance.hearts;
-        }*/
-
-        coinsText.text = "" + MainManager.instance.coins;
 
         gameActive = true;
     }
 
     public void OnCardClicked(bool match)
     {
-        Debug.Log("Masuk OnCardClicked in GameManager");
-
         if (match)
         {
             remainingPairs--;
         }
-        Debug.Log("Remaining Steps: " + remainingSteps + " - Remaining Pairs: " + remainingPairs);
 
         if (remainingPairs <= 0)
         {
@@ -110,59 +81,50 @@ public class GameManager : MonoBehaviour
 
     public void PlayerWin()
     {
-        //Debug.Log("masuk Player Win");
-        winCoinsText.text = "" + MainManager.instance.coins;
-        winRemainingStepsText.text = "" + remainingSteps;
-
-        int coinGained = remainingSteps * 10;
-        MainManager.instance.coins += coinGained;
-        rewardsText.text = "" + coinGained;
-
-        winScreen.gameObject.SetActive(true);
         gameActive = false;
 
-        MainManager.instance.currentLevel++;
+        // Current level masih bisa lebih 1 dari max level
+        if (MainManager.instance.currentLevel <= LevelLoader.Instance.levelConfigList.levels.Length)
+        {
+            MainManager.instance.currentLevel++;
+        }
+
+        if (MainManager.instance.currentLevel > LevelLoader.Instance.levelConfigList.levels.Length)
+        {
+            allCompletedScreen.gameObject.SetActive(true);
+        }
+        else {
+            winScreen.gameObject.SetActive(true);
+        }
+
         MainManager.instance.SaveData();
     }
     public void PlayerLose()
     {
-        Debug.Log("masuk Player Lose");
         loseScreen.gameObject.SetActive(true);
         gameActive = false;
     }
 
-    public void NextLevel()
+    public void OnNextButtonClicked()
     {
         winScreen.gameObject.SetActive(false);
         StartLevel();
     }
-
-    public void Restart()
+    public void OnPlayAgainButtonClicked()
     {
-        loseScreen.gameObject.SetActive(false);
-        settingsScreen.gameObject.SetActive(false);
-
-        remainingSteps = 10;
-
+        allCompletedScreen.gameObject.SetActive(false);
         StartLevel();
     }
 
-    public void OpenHomeScreen()
+    public void OnRetryButtonClicked()
     {
-        SceneManager.LoadScene("HomeScene");
+        loseScreen.gameObject.SetActive(false);
+        StartLevel();
     }
 
-    public void OpenSettings()
+    public void OnHomeButtonClicked()
     {
-        //Debug.Log("masuk Player Lose");
-        settingsScreen.gameObject.SetActive(true);
-        gameActive = false;
-    }
-    public void CloseSettings()
-    {
-        //Debug.Log("masuk Player Lose");
-        settingsScreen.gameObject.SetActive(false);
-        gameActive = true;
+        SceneManager.LoadScene("HomeScene");
     }
 
     public void ReduceSteps(int steps)
